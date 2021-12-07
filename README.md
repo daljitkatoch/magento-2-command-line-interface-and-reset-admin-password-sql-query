@@ -37,7 +37,7 @@ UPDATE admin_user SET password = CONCAT(SHA2('453b62624f69fc52ea1f754b6a118c6aad
 
 ### Where 453b62624f69fc52ea1f754b6a118c6a is the salt + add password you want to add
 
-## How to Set Cron for magento 2
+## How to Set Cron for magento 2 in cron tab
 * /usr/local/bin/php /home/public_html/bin/magento cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /home/public_html/var/log/magento.cron.log
 
 * /usr/local/bin/php /home/public_html/update/cron.php >> /home/public_html/var/log/update.cron.log
