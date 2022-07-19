@@ -43,3 +43,16 @@ UPDATE admin_user SET password = CONCAT(SHA2('453b62624f69fc52ea1f754b6a118c6aad
 * /usr/local/bin/php /home/public_html/update/cron.php >> /home/public_html/var/log/update.cron.log
 
 * /usr/local/bin/php /home/public_html/bin/magento setup:cron:run >> /home/public_html/var/log/setup.cron.log
+
+## Change owner/group of the folder
+sudo chown -R ubuntu:www-data foldername/
+
+## Create Zip folder of the a folder
+#go to folder location by using cd command then
+tar -cf zipname.tar foldername1 foldername2 //create zip folder by using this command
+#go to folder location by using cd command then
+tar -xvf zipname.tar //unzip  zip folder by using this command
+
+##set cron using ssh
+0	13	19	5	*  /usr/bin/php7.4 /home/sitename/www/cron/cron.php
+m  h   d  m w
