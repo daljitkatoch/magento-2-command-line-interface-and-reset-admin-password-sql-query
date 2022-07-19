@@ -48,11 +48,35 @@ UPDATE admin_user SET password = CONCAT(SHA2('453b62624f69fc52ea1f754b6a118c6aad
 sudo chown -R ubuntu:www-data foldername/
 
 ## Create Zip folder of the a folder
-#go to folder location by using cd command then
-tar -cf zipname.tar foldername1 foldername2 //create zip folder by using this command
-#go to folder location by using cd command then
-tar -xvf zipname.tar //unzip  zip folder by using this command
+### go to folder location by using cd command then create zip folder by using this command
 
-##set cron using ssh
+tar -cf zipname.tar foldername1 foldername2
+
+### go to folder location by using cd command then unzip  zip folder by using this command
+
+tar -xvf zipname.tar
+
+### set cron using ssh
+
 0	13	19	5	*  /usr/bin/php7.4 /home/sitename/www/cron/cron.php
-m  h   d  m w
+
+m  h  d  m w
+
+# Mysql Command
+
+## go to mysql
+
+mysql;
+
+## show databases
+
+show databases;
+
+dbname enter
+
+## To export a database, use the following:
+mysql -u username -p dbname > filename.sql
+
+## To import a database, use the following:
+mysql -u username -p dbname < filename.sql
+
