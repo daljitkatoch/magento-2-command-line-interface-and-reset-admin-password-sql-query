@@ -4,7 +4,7 @@
 
 php bin/magento setup:upgrade
 
-## Deploym static content command
+## Deploy static content command
 
 php -d memory_limit=-1 bin/magento setup:static-content:deploy -f
 
