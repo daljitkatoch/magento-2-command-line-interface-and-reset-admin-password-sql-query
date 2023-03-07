@@ -74,9 +74,13 @@ sudo chown -R ubuntu:www-data foldername/
 
 tar -cf zipname.tar foldername1 foldername2
 
+zip -r filename.zip foldername
+
 ### go to folder location by using cd command then unzip  zip folder by using this command
 
 tar -xvf zipname.tar
+
+unzip foldername.zip
 
 ### set cron using ssh
 
