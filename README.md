@@ -8,6 +8,10 @@ php bin/magento setup:upgrade
 
 php -d memory_limit=-1 bin/magento setup:static-content:deploy -f
 
+## Command to set folder permission after upgrade
+
+chmod -R 777 var/* generated/* pub/static/
+
 ## Magento cache flush command
 
 php -d memory_limit=-1 bin/magento cache:flush
@@ -24,19 +28,19 @@ php bin/magento admin:user:unlock admin
 
 php bin/magento setup:di:compile
 
-## Command to set folder permission after upgrade
-
-chmod -R 777 pub/static
-
-chmod -R 777 generated
-
-chmod -R 777 var/
-
 ## Enable module and disable with commandline on ssh
 
 php bin/magento module:enable Mudule_Name
 
 php bin/magento module:disable Mudule_Name
+
+## Deploy mode
+
+php bin/magento deploy:mode:show
+
+php bin/magento deploy:mode:set production
+
+php bin/magento deploy:mode:set developer
 
 ## Commands to Run Cron on Ssh Putty Manually
 
@@ -99,6 +103,3 @@ mysql -u username -p dbname > filename.sql
 ## To import a database, use the following:
 
 mysql -u username -p dbname < filename.sql
-
-
-
