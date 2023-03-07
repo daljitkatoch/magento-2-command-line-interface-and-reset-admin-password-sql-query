@@ -1,4 +1,4 @@
-# Magento-2-Ssh-Putty-Commands
+# Magento 2 Ssh Putty Commands
 
 ## Upgrade 
 
