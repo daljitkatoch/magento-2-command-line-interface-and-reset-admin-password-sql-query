@@ -102,7 +102,7 @@ dbname enter
 
 ## To export a database, use the following:
 
-mysql -u username -p dbname > filename.sql
+mysqldump -u username -p dbname > filename.sql
 
 ## To import a database, use the following:
 
