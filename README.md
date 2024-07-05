@@ -1,5 +1,10 @@
 # Magento 2 Ssh Putty Commands
 
+## Set up Installation magento 2
+
+php bin/magento setup:install --base-url='https://website.com/' --db-host='localhost' --db-name='db_name' --db-user='db_user' --db-password='db_password' --admin-firstname='admin' --admin-lastname='admin' --admin-email='email@email.com' --admin-user='admin' --admin-password='admin_password' --language='en_US' --currency='USD' --timezone='America/Chicago' --use-rewrites='1' --backend-frontname='admin'
+
+
 ## Upgrade 
 
 php bin/magento setup:upgrade
@@ -10,7 +15,13 @@ php -d memory_limit=-1 bin/magento setup:static-content:deploy -f
 
 ## Command to set folder permission after upgrade
 
-chmod -R 777 var/* generated/* pub/static/
+find ./generated -type d -exec chmod 777 {} \;
+
+find ./var/cache -type d -exec chmod 777 {} \;
+
+find ./pub/static -type d -exec chmod 777 {} \;
+
+chmod -R 777 var/* generated/* pub/*
 
 ## Magento cache flush command
 
@@ -66,7 +77,7 @@ UPDATE admin_user SET password = CONCAT(SHA2('453b62624f69fc52ea1f754b6a118c6aad
 
 ## Change owner/group of the folder
 
-sudo chown -R ubuntu:www-data foldername/
+sudo chown -R ubuntu:www-data /var/www/html/
 
 ## Create Zip folder of the a folder
 
